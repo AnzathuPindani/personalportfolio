@@ -1,16 +1,39 @@
+<style scoped>
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+@keyframes fade-slide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-slide {
+  animation: fade-slide 1s ease-out forwards;
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-animated {
+  background: linear-gradient(270deg, #F0F0F0,#e7dbd0);
+  background-size: 600% 600%;
+  animation: gradient 40s ease infinite;
+}
+
+</style>
 <template>
-  <div class="banner-1">
+  <div class="banner-1 bg-animated">
     <!-- NavBar -->
     <nav
       class="container px-6 mx-auto md:flex md:justify-between md:items-center"
     >
       <div class="flex items-center justify-between">
         <div class="relative w-16 h-16">
-          <img
-            class="rounded-full border border-gray-100 shadow-sm"
-            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=512&h=512&q=80"
-            alt="user image"
-          />
+       <h2 style="font-size: 40px !important;font-weight: 600;"><span style="color: orange;">{</span><span style="color:#0066A1">AP</span><span style="color: orange;">}</span></h2>
         </div>
         <!-- Mobile menu button -->
         <div @click="showMenu = !showMenu" class="flex md:hidden">
@@ -40,47 +63,203 @@
         <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
       </ul>
     </nav>
-    <!-- End Navbar -->
+<!--Start of Modals-->
+<div 
+  v-if="showModal" 
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+>
+  <div class="bg-[#41B883] rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
+    <!-- Close Button -->
+    <button 
+      @click="showModal = false" 
+      class="absolute top-3 right-3 text-white hover:text-gray-200"
+    >
+      ✕
+    </button>
+
+    <!-- Modal Content -->
+    <h2 class="text-2xl font-bold mb-4">My Vue Experience</h2>
+    <p class="leading-relaxed">
+      I craft scalable and modern frontend applications powered by Vue.js — from seamless API integrations to efficient state management with Pinia, and reusable component-driven designs.
+
+      Currently, I’m also pursuing a Vue.js Mid-Level Certification, sharpening my expertise to deliver even more powerful, maintainable, and user-friendly solutions.
+    </p>
+  </div>
+</div>
+
+<div 
+      v-if="showLaravelModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-red-600 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
+        <!-- Close Button -->
+        <button 
+          @click="showLaravelModal = false" 
+          class="absolute top-3 right-3 text-white hover:text-gray-200"
+        >
+          ✕
+        </button>
+
+        <!-- Modal Content -->
+        <h2 class="text-2xl font-bold mb-4">My Laravel Experience</h2>
+        <p class="leading-relaxed">
+I have been developing robust web systems with Laravel for over half a decade, building scalable, secure, and maintainable applications.  
+          From database design to RESTful APIs and server-side logic, I focus on delivering reliable solutions.  
+          I also integrate Laravel with modern frontend frameworks to create full-stack, high-performance applications that meet real-world needs. 
+        </p>
+      </div>
+    </div>
+
+  <div 
+      v-if="showPythonModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-yellow-500 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
+        <!-- Close Button -->
+        <button 
+          @click="showPythonModal = false" 
+          class="absolute top-3 right-3 text-white hover:text-gray-200"
+        >
+          ✕
+        </button>
+
+        <!-- Modal Content -->
+        <h2 class="text-2xl font-bold mb-4">My Python Experience & Certifications</h2>
+        <p class="leading-relaxed mb-4">
+          I have experience developing software solutions with Python, building backend services, scripts, and data-driven applications.  
+  Python allows me to tackle complex problems, automate workflows, and integrate systems seamlessly.  
+  To further my knowledge and validate my skills, I have obtained the Python Certified Associate in Programming and Python Certified Entry-Level Programmer certifications.
+        </p>
+
+        <!-- Badges -->
+        <div class="flex space-x-4 mt-4">
+          <img src="./assets/pcep.png" alt="Python Certification 1" class="w-16 h-16" />
+          <img src="./assets/pcap.png" alt="Python Certification 2" class="w-16 h-16" />
+        </div>
+      </div>
+    </div>
+
+        <div 
+      v-if="showWordPressModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-blue-700 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
+        <!-- Close Button -->
+        <button 
+          @click="showWordPressModal = false" 
+          class="absolute top-3 right-3 text-white hover:text-gray-200"
+        >
+          ✕
+        </button>
+
+        <!-- Modal Content -->
+        <h2 class="text-2xl font-bold mb-4">My WordPress Experience</h2>
+        <p class="leading-relaxed mb-4">
+          I have experience developing dynamic and responsive websites with WordPress, creating custom plugins, and optimizing sites for performance and security.  
+          I specialize in building user-friendly, scalable solutions that meet client needs and integrate modern web technologies.  
+          To strengthen my expertise, I continually explore advanced WordPress development techniques and best practices.
+        </p>
+
+      
+        
+      </div>
+    </div>
+        <!-- JavaScript Modal -->
+    <div 
+      v-if="showJsModal" 
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+    >
+      <div class="bg-yellow-500 rounded-2xl shadow-xl p-6 max-w-2xl w-full relative text-white">
+        <!-- Close Button -->
+        <button 
+          @click="showJsModal = false" 
+          class="absolute top-3 right-3 text-white hover:text-gray-200"
+        >
+          ✕
+        </button>
+
+        <!-- Modal Content -->
+        <h2 class="text-2xl font-bold mb-4">My JavaScript Journey</h2>
+        <p class="leading-relaxed mb-4">
+          My love for JavaScript has driven me to develop dynamic, interactive web applications.  
+          This passion has also inspired me to advance further into Vue.js, mastering modern frontend techniques and component-driven development.  
+          I focus on writing clean, efficient code to build scalable and maintainable applications.
+        </p>
+
+        <!-- Certification Badge -->
+        <div class="flex justify-center mt-6">
+          <img 
+            src="./assets/javascriptcertification.jpg" 
+            alt="JavaScript Certification" 
+            class="max-w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+<!--End of Modals-->
 
     <div class="flex items-center">
       <div class="w-11/12 space-y-5 md:space-y-10">
-        <h3
-          class="hello-button text-gray-700 w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
-        >
-          👋 Hola,
-        </h3>
+      
         <h1
-          class="3xl:text-8xl 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-xl font-Eczar font-bold leading-tight text-gray-700"
+          class="3xl:text-13xl 2xl:text-5xl xl:text-9xl lg:text-8xl md:text-3xl sm:text-3xl text-xl font-Eczar font-bold leading-tight text-gray-700 animate-fade-slide"
         >
-          It's
+      👋 Hi, I’m
           <a
             href="https://www.linkedin.com/"
             target="_blank"
             class="text-black hover:underline"
           >
-            Aliza Khan</a
-          >🙇‍♀️<br />Creative Designer and Storyteller
+            Anzathu Pindani</a
+          ><br />Frontend Focused. WordPress Ready. Software Driven.
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
-          <button class="text-white bg-gray-800 submit-button hidden md:block">
-            View My Work
+          <button class="text-white bg-gray-800 submit-button hidden md:block" style="background-color: #0066A1;">
+            View My CV
           </button>
           <button
-            class="text-gray-800 border-4 border-gray-800 submit-button mb-5 md:mb-0"
+            class="text-orange-600   submit-button mb-5 md:mb-0" style="border: 2.5px solid orangered;"
           >
             Contact Me
           </button>
         </div>
       </div>
 
-      <div class="w-8/12 flex justify-end">
-        <img
-          class="3xl:h-[800px] 2xl:h-[650px] xl:h-[550px] lg:h-[550px] md:h-[450px] sm:h-[350px]"
-          src="./assets/profile-female.png"
-          alt="user image"
-        />
-      </div>
+<div class="relative w-8/12 flex justify-center items-center">
+    <!-- Profile Image -->
+    <img
+      class="3xl:h-[800px] 2xl:h-[650px] xl:h-[550px] lg:h-[550px] md:h-[450px] sm:h-[350px] rounded-full "
+      src="./assets/heroimage.jpg"
+      alt="user image"
+    />
+
+    <!-- Floating Tech Logos -->
+    <img src="./assets/vue.png" 
+         class="absolute top-10 left-20 w-14 animate-pulse cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         @click="showModal = true"
+         alt="Vue" />
+
+    <img src="./assets/js.png" 
+         class="absolute top-20 right-10 w-12 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         @click="showJsModal = true"
+         alt="JavaScript" />
+
+    <img src="./assets/laravel.svg" 
+         class="absolute bottom-10 left-10 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         alt="Laravel" @click="showLaravelModal = true"
+ />
+
+    <img src="./assets/python.svg" 
+         class="absolute bottom-5 right-20 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+          @click="showPythonModal = true"
+         alt="Python" />
+
+    <img src="./assets/wordpress.png" 
+         class="absolute top-1/2 right-3 transform -translate-y-1/2 w-14 cursor-pointer  transition duration-300 hover:scale-125 hover:rotate-12" 
+        @click="showWordPressModal = true"
+         alt="WordPress" />
+  </div>
     </div>
   </div>
 
@@ -360,12 +539,14 @@
     </div>
   </div>
 </template>
-<script>
-  export default {
-    data() {
-      return {
-        showMenu: false,
-      }
-    },
-  }
+<script setup>
+import { ref,onMounted } from 'vue';
+const showMenu=ref('false');
+const showModal = ref(false);
+const showLaravelModal = ref(false);
+const showPythonModal = ref(false);
+const showWordPressModal = ref(false);
+const showJsModal = ref(false);
+
+
 </script>
