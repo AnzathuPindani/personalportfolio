@@ -66,7 +66,7 @@
         <li class="menu-button"><a href="#">Home</a></li>
         <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
         <li class="menu-button">
-          <a href="#testimonial" v-smooth-scroll>Testimonials</a>
+          <a href="#certifications" v-smooth-scroll>Achievements</a>
         </li>
         <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
       </ul>
@@ -204,6 +204,28 @@ I have been developing robust web systems with Laravel for over half a decade, b
         </div>
       </div>
     </div>
+
+    <div
+    v-if="showCvModal"
+    class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+  >
+    <div class="bg-white w-11/12 md:w-3/4 lg:w-1/2 rounded-lg shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-xl font-bold text-gray-700">My CV</h2>
+        <button @click="closeCv" class="text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      </div>
+
+      <!-- PDF Viewer -->
+      <div class="h-[80vh]">
+        <iframe
+          src="Anzathu_Pindani_Complete_CV.pdf" 
+          class="w-full h-full"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </div>
 <!--End of Modals-->
 
     <div class="flex items-center">
@@ -223,10 +245,30 @@ I have been developing robust web systems with Laravel for over half a decade, b
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
-          <button class="text-white bg-gray-800 submit-button hidden md:block" style="background-color: #0066A1;">
-            View My CV
-          </button>
-          <button
+      <button
+    @click="openCv"
+    class="relative flex items-center justify-center gap-2 text-white bg-gray-800 submit-button hidden md:flex px-6 py-3 rounded-lg transition"
+    style="background-color: #0066A1;"
+    :disabled="isLoadingCv"
+  >
+    <span v-if="!isLoadingCv">View My CV</span>
+
+    <!-- Loading Animation -->
+    <span v-else class="flex items-center gap-2">
+      <svg
+        class="w-5 h-5 animate-bounce"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V8l-6-6H6z"
+        />
+      </svg>
+      <span>Loading...</span>
+    </span>
+  </button>
+  
+          <button href="#about" v-smooth-scroll
             class="text-orange-600   submit-button mb-5 md:mb-0" style="border: 2.5px solid orangered;"
           >
             Contact Me
@@ -606,7 +648,23 @@ const showPythonModal = ref(false);
 const showWordPressModal = ref(false);
 const showJsModal = ref(false);
 
+const showCvModal = ref(false);
 
+
+const isLoadingCv = ref(false);
+
+const openCv = () => {
+  isLoadingCv.value = true;
+
+  // Simulate loading delay (e.g., fetching PDF or opening modal)
+  setTimeout(() => {
+    window.open("/Anzathu_Pindani_Complete_CV.pdf", "_blank"); 
+    isLoadingCv.value = false;
+  }, 3000); // adjust delay
+};
+const closeCv = () => {
+  showCvModal.value = false;
+};
 const certifications = [
   {
     title: "Innovation Award",
