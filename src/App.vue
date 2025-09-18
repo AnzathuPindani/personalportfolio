@@ -519,7 +519,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
   <div class="banner-2 md:flex text-white items-center md:pt-10  md:justify-evenly" id="about">
     <img
-      class="md:h-[500px] h-[400px]"
+      class="md:h-[500px] h-[400px] hidden md:block"
       src="./assets/top-view-man-using-his-laptop.png"
       alt="user image"
     />
@@ -528,7 +528,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 <p class="font-work_sans text-lg leading-relaxed">
   I’m Anzathu Pindani, a Senior Software Developer from Malawi specializing in Vue.js, Laravel, and WordPress. 
   I build intuitive, responsive applications and am currently pursuing a Master’s in Informatics. 
-  Outside of coding, I enjoy UI/UX exploration, side projects, reading, puzzles, wrestling, movies, and traveling.
+  Outside of coding, I enjoy UI/UX exploration,reading, wrestling, movies, and traveling.
 </p>
 
 
