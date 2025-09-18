@@ -19,9 +19,9 @@
   100% { background-position: 0% 50%; }
 }
 .bg-animated {
-  background: linear-gradient(270deg, #F0F0F0,#e7dbd0);
+  background: linear-gradient(270deg, #F0F0F0,#f4cba5);
   background-size: 600% 600%;
-  animation: gradient 40s ease infinite;
+  animation: gradient 20s ease infinite;
 }
 
 </style>
@@ -263,71 +263,147 @@ I have been developing robust web systems with Laravel for over half a decade, b
     </div>
   </div>
 
-  <div class="banner-2 space-y-10 pb-20" id="work">
-    <h3 class="heading3 my-5">My Recent Work</h3>
-    <div class="card">
-      <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
-        </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
-          View Case Study
+<div class="banner-2 space-y-10 pb-20" id="work">
+  <h3 class="text-white my-5 md:text-5xl text-xl font-bold font-work_sans tracking-wide text-center">
+    My Recent Work
+  </h3>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-20">
+
+    <!-- Large card (spans 2 cols) -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-xl sm:col-span-2">
+      <img
+        src="./assets/castel.png"
+        alt="Project 1"
+        class="w-full h-96 object-cover transform transition duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+          View More
         </button>
       </div>
-      <div class="card-image bg-green-100">
-        <img
-          class="object-cover w-full h-72 md:h-96"
-          src="./assets/project1.png"
-        />
+      <div class="p-5 bg-gray-900 text-white">
+        <h4 class="font-bold text-2xl">Castel Website</h4>
+        <p class="text-sm mt-2">Contributed to the development of Castel’s corporate website.</p>
       </div>
     </div>
 
-    <div class="card">
-      <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
-        </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
-          View Case Study
+    <!-- Vertical card -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-xl row-span-2">
+      <img
+        src="./assets/egghunt.jpg"
+        alt="Project 2"
+        class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+      <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+          View More
         </button>
       </div>
-      <div class="card-image">
-        <img
-          class="object-cover w-full h-48 md:h-96"
-          src="./assets/project2.png"
-        />
+      <div class="p-5 bg-gray-900 text-white">
+        <h4 class="font-bold text-2xl">Project Two</h4>
+        <p class="text-sm mt-2">Creative dashboard design with unique interactions.</p>
       </div>
     </div>
 
-    <div class="card">
-      <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
-          Designed some empty state screens in kawaii style for the popular
-          sheepify app.Tailwind lets you conditionally apply utility classes in
-          different states using variant modifiers. For example, use hover:gap-6
-          to only apply the gap-6 utility
-        </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
-          View Case Study
+    <!-- Medium card -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-xl">
+      <img
+        src="./assets/bhs.png"
+        alt="Project 3"
+        class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+          View More
         </button>
       </div>
-      <div class="card-image bg-green-100">
-        <img
-          class="object-cover w-full h-72 md:h-96"
-          src="./assets/project1.png"
-        />
+      <div class="p-5 bg-gray-900 text-white">
+        <h4 class="font-bold text-2xl">Blantyre Hotel</h4>
+        <p class="text-sm mt-2">Mobile-first design</p>
+      </div>
+    </div>
+
+    <!-- Wide card -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-xl sm:col-span-2">
+      <img
+        src="./assets/appic.png"
+        alt="Project 4"
+        class="w-full h-72 object-cover transform transition duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+        <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+          View More
+        </button>
+      </div>
+      <div class="p-5 bg-gray-900 text-white">
+        <h4 class="font-bold text-2xl">Appic</h4>
+        <p class="text-sm mt-2">A portfolio website exploring clean design and responsive layouts</p>
+      </div>
+    </div>
+
+    <!-- Square card -->
+    <div class="relative group overflow-hidden rounded-2xl shadow-xl">
+      <img
+        src="./assets/fhs.png"
+        alt="Project 5"
+        class="w-full h-72 object-cover transform transition duration-500 group-hover:scale-110"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+          View More
+        </button>
+      </div>
+      <div class="p-5 bg-gray-900 text-white">
+        <h4 class="font-bold text-2xl">FHS</h4>
+        <p class="text-sm mt-2">Contributed to the frontend development of FHS using Vue as part of the team</p>
+      </div>
+    </div>
+
+  </div>
+ 
+<section id="experience" class="relative bg-[#f4cba5]-900 py-20 overflow-hidden">
+  <!-- Decorative shapes -->
+  <div class="absolute -top-20 -left-20 w-80 h-80 bg-[#f4cba5]/20 rounded-full filter blur-3xl"></div>
+  <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-[#c17111]/20 rounded-full filter blur-3xl"></div>
+
+  <div class="container mx-auto px-6 md:px-20 text-center space-y-10 relative z-10">
+    <h3 class="text-4xl md:text-5xl font-bold font-work_sans tracking-wide text-white">
+      My Experience
+    </h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-10">
+      <!-- Years of Experience -->
+      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
+        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="6">6+</h4>
+        <p class="text-xl text-white mt-2">Years of Experience</p>
+      </div>
+
+      <!-- Projects Done -->
+      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
+        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="270">0+</h4>
+        <p class="text-xl text-white mt-2">Projects Done</p>
+      </div>
+
+      <!-- Awards Won -->
+      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
+        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="1">1+</h4>
+        <p class="text-xl text-white mt-2">Awards Won</p>
+      </div>
+
+      <!-- Side Projects -->
+      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
+        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="1">0+</h4>
+        <p class="text-xl text-white mt-2">Certification</p>
       </div>
     </div>
   </div>
+</section>
+
+
+
+</div>
+
 
   <div class="banner-1" id="testimonial">
     <div class="space-y-4 grid place-items-center mt-5">
@@ -547,6 +623,37 @@ const showLaravelModal = ref(false);
 const showPythonModal = ref(false);
 const showWordPressModal = ref(false);
 const showJsModal = ref(false);
+const counters = document.querySelectorAll(".animate-count");
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute("data-count");
+    const count = +counter.innerText.replace("+", "");
+    const increment = target / 200; // adjust speed
+
+    if (count < target) {
+      counter.innerText = `${Math.ceil(count + increment)}+`;
+      setTimeout(updateCount, 10);
+    } else {
+      counter.innerText = `${target}+`;
+    }
+  };
+
+  // Trigger when scrolled into view
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(counter);
+});
 
 
 </script>
