@@ -286,27 +286,27 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
     <!-- Floating Tech Logos -->
     <img src="./assets/vue.png" 
-         class="absolute top-10 left-20 w-14 animate-pulse cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         class="absolute top-10 left-20 w-14 animate-pulse cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12 hidden md:block" 
          @click="showModal = true"
          alt="Vue" />
 
     <img src="./assets/js.png" 
-         class="absolute top-20 right-10 w-12 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         class="absolute top-20 right-10 w-12 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12 hidden md:block" 
          @click="showJsModal = true"
          alt="JavaScript" />
 
     <img src="./assets/laravel.svg" 
-         class="absolute bottom-10 left-10 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         class="absolute bottom-10 left-10 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12 hidden md:block" 
          alt="Laravel" @click="showLaravelModal = true"
  />
 
     <img src="./assets/python.svg" 
-         class="absolute bottom-5 right-20 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12" 
+         class="absolute bottom-5 right-20 w-14 cursor-pointer transform transition duration-300 hover:scale-125 hover:rotate-12 hidden md:block" 
           @click="showPythonModal = true"
          alt="Python" />
 
     <img src="./assets/wordpress.png" 
-         class="absolute top-1/2 right-3 transform -translate-y-1/2 w-14 cursor-pointer  transition duration-300 hover:scale-125 hover:rotate-12" 
+         class="absolute top-1/2 right-3 transform -translate-y-1/2 w-14 cursor-pointer  transition duration-300 hover:scale-125 hover:rotate-12 hidden md:block" 
         @click="showWordPressModal = true"
          alt="WordPress" />
   </div>
@@ -418,7 +418,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
 </div>
 <section id="certifications" class="banner-2 mt-2 py-20 bg-gray-900 text-white">
-         <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Achievements</h3>
+         <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Certifications and Awards</h3>
  <div class="container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-0">
 
       <!-- LEFT: Timeline -->
