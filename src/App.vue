@@ -24,6 +24,14 @@
   animation: gradient 20s ease infinite;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
 <template>
   <div class="banner-1 bg-animated">
@@ -264,7 +272,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
   </div>
 
 <div class="banner-2 space-y-10 pb-20" id="work">
-  <h3 class="text-white my-5 md:text-5xl text-xl font-bold font-work_sans tracking-wide text-center">
+  <h3 class="text-white my-5 md:text-5xl text-xl  font-bold font-work_sans tracking-wide px-6 md:px-20">
     My Recent Work
   </h3>
 
@@ -356,181 +364,143 @@ I have been developing robust web systems with Laravel for over half a decade, b
       </div>
       <div class="p-5 bg-gray-900 text-white">
         <h4 class="font-bold text-2xl">FHS</h4>
-        <p class="text-sm mt-2">Contributed to the frontend development of FHS using Vue as part of the team</p>
+        <p class="text-sm mt-2">Contributed to FHS frontend in Vue.</p>
       </div>
     </div>
 
   </div>
  
-<section id="experience" class="relative bg-[#f4cba5]-900 py-20 overflow-hidden">
-  <!-- Decorative shapes -->
-  <div class="absolute -top-20 -left-20 w-80 h-80 bg-[#f4cba5]/20 rounded-full filter blur-3xl"></div>
-  <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-[#c17111]/20 rounded-full filter blur-3xl"></div>
 
-  <div class="container mx-auto px-6 md:px-20 text-center space-y-10 relative z-10">
-    <h3 class="text-4xl md:text-5xl font-bold font-work_sans tracking-wide text-white">
-      My Experience
-    </h3>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-10">
-      <!-- Years of Experience -->
-      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
-        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="6">6+</h4>
-        <p class="text-xl text-white mt-2">Years of Experience</p>
+
+
+</div>
+<section id="certifications" class="banner-2 mt-2 py-20 bg-gray-900 text-white">
+         <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Achievements: Certifications & Awards</h3>
+ <div class="container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-0">
+
+      <!-- LEFT: Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 h-full border-l-2 border-[#c17111]"></div>
+
+        <div
+          v-for="(cert, index) in certifications"
+          :key="index"
+          @click="selectedCert = cert"
+          class="mb-16 relative pl-16 md:pl-0 md:w-3/4 md:mx-auto cursor-pointer group"
+        >
+          <!-- Icon -->
+          <div
+            class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-12 h-12 flex items-center justify-center  group-hover:scale-110 transition"
+          >
+        
+            <img :src="cert.icon" :alt="cert.title" class="h-10" />
+          </div>
+          <!-- Title -->
+          <div class="mt-2">
+            <p class="text-xl font-bold">{{ cert.title }}</p>
+            <p class="text-sm text-gray-300">{{ cert.issuer }}</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Projects Done -->
-      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
-        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="270">0+</h4>
-        <p class="text-xl text-white mt-2">Projects Done</p>
-      </div>
-
-      <!-- Awards Won -->
-      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
-        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="1">1+</h4>
-        <p class="text-xl text-white mt-2">Awards Won</p>
-      </div>
-
-      <!-- Side Projects -->
-      <div class="flex flex-col items-center justify-center bg-gray-800 rounded-xl p-6 hover:scale-105 transform transition duration-500 shadow-lg">
-        <h4 class="text-5xl md:text-6xl font-bold text-[#c17111] animate-count" data-count="1">0+</h4>
-        <p class="text-xl text-white mt-2">Certification</p>
+      <!-- RIGHT: Certificate Preview -->
+      <div class="flex items-center justify-center">
+        <transition name="fade">
+          <img
+            v-if="selectedCert"
+            :src="selectedCert.image"
+            :alt="selectedCert.title"
+            class="rounded-lg shadow-2xl max-h-[500px] object-contain"
+          />
+        </transition>
       </div>
     </div>
+</section>
+
+<section id="work-process" class="banner-1 text-gray  bg-gray-900">
+  <div class="container mx-auto px-6 md:px-20 md:py-20  text-left space-y-10">
+    <!-- Section Title -->
+    <h3 class="text-4xl md:text-5xl font-bold tracking-wide">My Work Process</h3>
+
+    <!-- Slider Container -->
+    <div class="flex  snap-x snap-mandatory space-x-6 py-10">
+
+      <!-- Slide 1: Research -->
+      <div class="snap-start flex-shrink-0  w-80  rounded-2xl  overflow-hidden hover:scale-105 transform transition duration-500">
+        <img src="./assets/1191.jpg" alt="Research" class=" object-cover">
+        <div class="p-6 ">
+          <h4 class="text-2xl font-bold mb-2">1. Research & Discovery</h4>
+          <p class="text-sm">Understand client needs, audience, and project goals to plan effectively.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2: Planning (shifted down for zig-zag) -->
+      <div class="snap-start flex-shrink-0 w-80 rounded-2xl relative top-20  overflow-hidden hover:scale-105 transform transition duration-500">
+        <img src="./assets/15943.jpg" alt="Planning" class="w-full object-cover">
+        <div class="p-6 ">
+          <h4 class="text-2xl font-bold mb-2">2. Planning & Strategy</h4>
+          <p class="text-sm">Define sitemaps, user flows, and timelines for smooth project execution.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Design & Development -->
+      <div class="snap-start flex-shrink-0 rounded-2xl w-80 overflow-hidden hover:scale-105 transform transition duration-500">
+        <img src="./assets/2150104489.jpg" alt="Design & Development" class=" object-cover">
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">3. Design & Development</h4>
+          <p class="text-sm">Wireframes, mockups, and coding functional responsive websites with Vue or Laravel.</p>
+        </div>
+      </div>
+
+      <!-- Slide 4: Testing & Launch (shifted down for zig-zag) -->
+      <div class="snap-start flex-shrink-0 w-80 relative top-20  rounded-2xl  overflow-hidden hover:scale-105 transform transition duration-500">
+        <img src="./assets/123880.jpg" alt="Testing" class=" object-cover">
+        <div class="p-6 ">
+          <h4 class="text-2xl font-bold mb-2">4. Testing & Launch</h4>
+          <p class="text-sm">QA, bug fixes, and deployment for a smooth and successful launch.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional: Add navigation dots or arrows here -->
+
   </div>
 </section>
 
 
 
-</div>
 
+  
 
-  <div class="banner-1" id="testimonial">
-    <div class="space-y-4 grid place-items-center mt-5">
-      <h3 class="heading3">Some Generous Words</h3>
-      <p class="font-work_sans text-gray-600 font-semibold leading-relaxed">
-        Some of my favorite testimonials from my clients
-      </p>
-    </div>
-    <div class="max-w-6xl mx-auto px-8 py-16">
-      <div class="relative">
-        <div class="relative lg:flex rounded-lg shadow-2xl overflow-hidden">
-          <div
-            class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center"
-          >
-            <img
-              class="absolute h-full w-full object-cover"
-              src="https://a.slack-edge.com/80588/marketing/img/meta/slack_hash_256.png"
-              alt=""
-            />
-            <div class="absolute inset-0 bg-gray-700 opacity-75"></div>
-            <svg
-              class="relative"
-              width="200"
-              height="120"
-              viewBox="0 0 200 120"
-            >
-              <path
-                fill="#fff"
-                fill-rule="evenodd"
-                d="M63.75 75.24l2.5-5.93c2.7 2.05 6.3 3.13 9.85 3.13 2.61 0 4.27-1.03 4.27-2.6-.04-4.37-15.7-.95-15.82-11.9-.04-5.58 4.8-9.86 11.66-9.86 4.08 0 8.16 1.03 11.06 3.38l-2.34 6.05c-2.66-1.73-5.97-2.97-9.12-2.97-2.13 0-3.55 1.03-3.55 2.36.04 4.28 15.82 1.94 15.98 12.4 0 5.7-4.72 9.69-11.5 9.69-4.96 0-9.52-1.2-12.99-3.75zm96.01-8.08a7.16 7.16 0 0 1-8.11 3.5 7.35 7.35 0 0 1-5.38-7.13c0-3.34 2.2-6.27 5.38-7.12 3.16-.85 6.5.58 8.11 3.5l6.9-3.93a15.02 15.02 0 0 0-17.03-7.42 15.42 15.42 0 0 0-11.33 14.97c0 7.04 4.66 13.2 11.33 14.97a15.02 15.02 0 0 0 17.04-7.43l-6.9-3.9zM91.71 35.25h8.64v43.16h-8.64V35.25zm78.34 0v43.16h8.65V65.48l10.25 12.93H200l-13.03-15.37 12.06-14.34h-10.58l-9.76 11.9V35.25h-8.64zm-43.82 31.1a8.14 8.14 0 0 1-6.83 3.56 7.24 7.24 0 0 1-7.33-7.16 7.24 7.24 0 0 1 7.33-7.15 8.1 8.1 0 0 1 6.83 3.67v7.08zm0-18v3.4c-1.43-2.36-5-4-8.72-4-7.7 0-13.76 6.64-13.76 14.96 0 8.33 6.07 15.04 13.76 15.04 3.73 0 7.3-1.63 8.72-4v3.4H135v-28.8h-8.77zM10.53 66.4A5.32 5.32 0 0 1 5.3 71.8 5.32 5.32 0 0 1 .04 66.4a5.32 5.32 0 0 1 5.25-5.38h5.25v5.38zm2.63 0a5.32 5.32 0 0 1 5.25-5.38c2.9 0 5.25 2.4 5.25 5.38v13.46a5.32 5.32 0 0 1-5.25 5.39 5.32 5.32 0 0 1-5.25-5.39V66.4zm5.26-21.63a5.32 5.32 0 0 1-5.25-5.38A5.32 5.32 0 0 1 18.42 34c2.9 0 5.25 2.41 5.25 5.39v5.38h-5.25zm0 2.74c2.9 0 5.25 2.41 5.25 5.39a5.32 5.32 0 0 1-5.25 5.38H5.25A5.32 5.32 0 0 1 0 52.9a5.32 5.32 0 0 1 5.25-5.39h13.17zm21.03 5.39a5.32 5.32 0 0 1 5.25-5.39c2.9 0 5.25 2.41 5.25 5.39a5.32 5.32 0 0 1-5.25 5.38h-5.25V52.9zm-2.62 0a5.32 5.32 0 0 1-5.25 5.38 5.32 5.32 0 0 1-5.25-5.38V39.39A5.32 5.32 0 0 1 31.58 34c2.9 0 5.25 2.41 5.25 5.39v13.5zm-5.25 21.58c2.9 0 5.25 2.41 5.25 5.38a5.32 5.32 0 0 1-5.25 5.39 5.32 5.32 0 0 1-5.25-5.39v-5.38h5.25zm0-2.7a5.32 5.32 0 0 1-5.25-5.38 5.32 5.32 0 0 1 5.25-5.38h13.17c2.9 0 5.25 2.4 5.25 5.38a5.32 5.32 0 0 1-5.25 5.39H31.58z"
-              />
-            </svg>
-          </div>
-          <div class="relative lg:w-7/12 bg-white">
-            <svg
-              class="absolute h-full text-white w-24 -ml-12"
-              fill="currentColor"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              <polygon points="50,0 100,0 50,100 0,100" />
-            </svg>
-            <div
-              class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed"
-            >
-              <p>
-                As
-                <strong class="text-gray-900 font-medium">Slack</strong> grows
-                rapidly, using Stripe helps them scale payments easily &mdash;
-                supporting everything from getting paid by users around the
-                world to enabling ACH payments for corporate customers.
-              </p>
-              <p class="mt-6">
-                <a
-                  href="#"
-                  class="font-medium text-indigo-600 hover:text-indigo-900"
-                >
-                  &rarr; Md Solaiman Hossain</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="absolute inset-y-0 left-0 lg:flex lg:items-center">
-          <button
-            class="mt-24 lg:mt-0 -ml-6 h-12 w-12 rounded-full bg-white p-3 shadow-lg"
-          >
-            <svg
-              class="h-full w-full text-indigo-900"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="absolute inset-y-0 right-0 lg:flex lg:items-center">
-          <button
-            class="mt-24 lg:mt-0 -mr-6 h-12 w-12 rounded-full bg-white p-3 shadow-lg"
-          >
-            <svg
-              class="h-full w-full text-indigo-900"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M18.59 13H3a1 1 0 0 1 0-2h15.59l-5.3-5.3a1 1 0 1 1 1.42-1.4l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="banner-2 md:flex items-center md:justify-evenly" id="about">
+  <div class="banner-2 md:flex text-white items-center md:pt-10  md:justify-evenly" id="about">
     <img
       class="md:h-[500px] h-[400px]"
-      src="./assets/about-female.png"
+      src="./assets/top-view-man-using-his-laptop.png"
       alt="user image"
     />
-    <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-      <h4 class="project-title item">Sheepify States</h4>
-      <p class="font-work_sans">
-        I am Salman Khan from Lucknow, India. I am working in an Indian Startup
-        as a User Eperience Designer for the past two years.
-        <br />
-        I got featured various times on many big and small marketplaces,
-        portfolio websites and blogs. I also received some awards and
-        recognitions from some of the big and small award companies. Besides
-        designing, I like to watch anime, read books and solve sudoku.
-      </p>
-      <button class="text-sky-800 font-bold text-2xl tracking-wider">
-        View Case Study
-      </button>
+    <div class="space-y-5 py-8 px-5 md:py-10 md:px-10 md:w-1/2">
+
+<p class="font-work_sans text-lg leading-relaxed">
+  I’m Anzathu Pindani, a Senior Software Developer from Malawi specializing in Vue.js, Laravel, and WordPress. 
+  I build intuitive, responsive applications and am currently pursuing a Master’s in Informatics. 
+  Outside of coding, I enjoy UI/UX exploration, side projects, reading, puzzles, wrestling, movies, and traveling.
+</p>
+
+
+
     </div>
   </div>
 
   <div class="banner-1 flex h-full items-center">
     <div class="w-7/12 p-12">
       <h2 class="text-gray-700 md:text-6xl text-2xl font-Eczar mb-5 font-bold">
-        Let’s work together and make everything super cute and super useful.
+   Let’s build experiences that are both delightful and highly functional.
       </h2>
       <a class="underline text-2xl text-blue-600 font-work_sans"
-        >📧 hire@author.com</a
+        >📧 anzathupindani286@gmail.com</a
       >
     </div>
     <div class="w-5/12 pr-28">
@@ -616,44 +586,67 @@ I have been developing robust web systems with Laravel for over half a decade, b
   </div>
 </template>
 <script setup>
-import { ref,onMounted } from 'vue';
+import { ref} from 'vue';
+
+import innoIcon from './assets/nico-logo.png';
+import innoCert from './assets/innovationcert.png';
+import uxIcon from './assets/ux.png';
+import uxCert from './assets/uxcertificate.jpg';
+import javaCert from './assets/javacert.jpg';
+import entrypythonCert from './assets/entrycert.jpg';
+import reactCert from './assets/reactcert.jpg';
+import assocPythonCert from './assets/pythonassccert.jpg';
+import pythonIcon from './assets/python.svg';
+import reactIcon from './assets/science.png';
+import jsIcon from './assets/js.png';
 const showMenu=ref('false');
 const showModal = ref(false);
 const showLaravelModal = ref(false);
 const showPythonModal = ref(false);
 const showWordPressModal = ref(false);
 const showJsModal = ref(false);
-const counters = document.querySelectorAll(".animate-count");
 
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute("data-count");
-    const count = +counter.innerText.replace("+", "");
-    const increment = target / 200; // adjust speed
 
-    if (count < target) {
-      counter.innerText = `${Math.ceil(count + increment)}+`;
-      setTimeout(updateCount, 10);
-    } else {
-      counter.innerText = `${target}+`;
-    }
-  };
+const certifications = [
+  {
+    title: "Innovation Award",
+    issuer: "NICO Technologies – 2025",
+    icon: innoIcon,
+    image: innoCert, 
+  },
+  {
+    title: "UX Design ",
+    issuer: "Coursera – 2024",
+    icon: uxIcon,
+    image: uxCert,
+  },
+  {
+    title: "Python Associate",
+    issuer: "Python Institute – 2024",
+    icon: pythonIcon,
+    image: assocPythonCert,
+  },
+  {
+    title: "Python Entry Level",
+    issuer: "Python Institute – 2023",
+    icon: pythonIcon,
+    image: entrypythonCert,
+  },
+  {
+    title: "React JS",
+    issuer: "Edureka – 2022",
+    icon: reactIcon,
+    image: reactCert,
+  },
+  {
+    title: "JavaScript",
+    issuer: "W3 Schools – 2021",
+    icon: jsIcon,
+    image: javaCert,
+  },
+];
 
-  // Trigger when scrolled into view
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateCount();
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  observer.observe(counter);
-});
+const selectedCert = ref(certifications[0]);
 
 
 </script>
