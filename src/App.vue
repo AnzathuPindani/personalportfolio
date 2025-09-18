@@ -418,7 +418,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
 </div>
 <section id="certifications" class="banner-2 mt-2 py-20 bg-gray-900 text-white">
-         <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Achievements: Certifications & Awards</h3>
+         <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Achievements</h3>
  <div class="container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-0">
 
       <!-- LEFT: Timeline -->
