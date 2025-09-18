@@ -464,7 +464,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 <section id="work-process" class="banner-1 text-gray  bg-gray-900">
   <div class="container mx-auto px-6 md:px-20 md:py-20  text-left space-y-10">
     <!-- Section Title -->
-    <h3 class="text-4xl md:text-5xl font-bold tracking-wide">My Work Process</h3>
+    <h3 class="text-4xl md:text-5xl font-bold tracking-wide">My Development Process</h3>
 
     <!-- Slider Container -->
     <div class="flex  snap-x snap-mandatory space-x-6 py-10">
