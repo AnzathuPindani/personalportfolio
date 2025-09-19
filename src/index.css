@@ -10,9 +10,10 @@
 }
 
 .banner-2 {
-  @apply px-5  pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
-  background-color: #0066A1;
+  @apply px-5 pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
+  @apply bg-gradient-to-r from-[#004c75]/90 to-[#0096c7]/90;
 }
+
 .bg-yellowis {
   background-color: #ffddbf;
 }

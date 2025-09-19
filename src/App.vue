@@ -64,11 +64,12 @@
         class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
         <li class="menu-button"><a href="#">Home</a></li>
+          <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
         <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
         <li class="menu-button">
           <a href="#certifications" v-smooth-scroll>Achievements</a>
         </li>
-        <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
+      
       </ul>
     </nav>
 <!--Start of Modals-->
@@ -312,111 +313,101 @@ I have been developing robust web systems with Laravel for over half a decade, b
   </div>
     </div>
   </div>
+ <div class="banner-2 md:flex text-white items-center md:pt-10  md:justify-evenly space-y-10 pb-20" id="about">
+ 
+    <div>
+  <h3 class="text-gray my-5 md:text-5xl text-xl  font-bold font-work_sans tracking-wide px-6 md:px-20">
+    About Me
+  </h3>
+<p class="font-work_sans text-lg leading-relaxed px-6 md:px-20">
+I’m Anzathu Pindani, a Senior Software Developer from Malawi with 7+ years of experience building responsive, user-friendly applications using Vue.js, Laravel, and WordPress. I specialize in creating intuitive interfaces and scalable solutions, blending development with strong UI/UX practices. Currently, I’m pursuing a Master’s in Informatics to deepen my expertise in software engineering and data-driven systems.
 
-<div class="banner-2 space-y-10 pb-20" id="work">
-  <h3 class="text-white my-5 md:text-5xl text-xl  font-bold font-work_sans tracking-wide px-6 md:px-20">
+Outside of coding, I enjoy UI/UX exploration, reading, wrestling, movies, and traveling.
+</p>
+
+
+
+    </div>
+  </div>
+<div class="banner-1 space-y-10 pb-20" id="work">
+  <h3 class="text-gray my-5 md:text-5xl text-xl  font-bold font-work_sans tracking-wide px-6 md:px-20">
     My Recent Work
   </h3>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-20">
-
-    <!-- Large card (spans 2 cols) -->
-    <div class="relative group overflow-hidden rounded-2xl shadow-xl sm:col-span-2">
-      <img
-        src="./assets/castel.png"
-        alt="Project 1"
-        class="w-full h-96 object-cover transform transition duration-500 group-hover:scale-110"
-      />
-      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
-          View More
-        </button>
-      </div>
-      <div class="p-5 bg-gray-900 text-white">
-        <h4 class="font-bold text-2xl">Castel Website</h4>
-        <p class="text-sm mt-2">Contributed to the development of Castel’s corporate website.</p>
-      </div>
-    </div>
-
-    <!-- Vertical card -->
-    <div class="relative group overflow-hidden rounded-2xl shadow-xl row-span-2">
-      <img
-        src="./assets/egghunt.jpg"
-        alt="Project 2"
-        class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110"
-      />
-      <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-      <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
-          View More
-        </button>
-      </div>
-      <div class="p-5 bg-gray-900 text-white">
-        <h4 class="font-bold text-2xl">Project Two</h4>
-        <p class="text-sm mt-2">Creative dashboard design with unique interactions.</p>
-      </div>
-    </div>
-
-    <!-- Medium card -->
-    <div class="relative group overflow-hidden rounded-2xl shadow-xl">
+<div class="grid grid-cols-1  lg:grid-cols-3 gap-6 px-6 md:px-20">
+  <!-- CARD TEMPLATE -->
+  <div class="flex flex-col bg-gray-900 text-white rounded-2xl overflow-hidden shadow-xl group transition duration-500">
+    <!-- Image -->
+    <div class="relative h-60 overflow-hidden">
       <img
         src="./assets/bhs.png"
-        alt="Project 3"
-        class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110"
+        alt="Blantyre Hotel"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
+      <!-- Hover Button -->
       <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+        <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg hover:bg-[#e2892e] hover:scale-105 transition-transform duration-300">
           View More
         </button>
       </div>
-      <div class="p-5 bg-gray-900 text-white">
-        <h4 class="font-bold text-2xl">Blantyre Hotel</h4>
-        <p class="text-sm mt-2">Mobile-first design</p>
-      </div>
     </div>
 
-    <!-- Wide card -->
-    <div class="relative group overflow-hidden rounded-2xl shadow-xl sm:col-span-2">
+    <!-- Content -->
+    <div class="flex-grow p-5 flex flex-col justify-between">
+      <h4 class="font-bold text-2xl">Blantyre Hotel</h4>
+      <p class="text-sm mt-2 text-gray-300">Mobile-first design</p>
+    </div>
+  </div>
+
+  <!-- Duplicate and replace content for other cards -->
+  <!-- Card 2 -->
+  <div class="flex flex-col bg-gray-900 text-white rounded-2xl overflow-hidden shadow-xl group transition duration-500 ">
+    <div class="relative h-60 overflow-hidden">
       <img
         src="./assets/appic.png"
-        alt="Project 4"
-        class="w-full h-72 object-cover transform transition duration-500 group-hover:scale-110"
+        alt="Appic"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
       <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-        <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+        <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg hover:bg-[#e2892e] hover:scale-105 transition-transform duration-300">
           View More
         </button>
       </div>
-      <div class="p-5 bg-gray-900 text-white">
-        <h4 class="font-bold text-2xl">Appic</h4>
-        <p class="text-sm mt-2">A portfolio website exploring clean design and responsive layouts</p>
-      </div>
     </div>
+    <div class="flex-grow p-5 flex flex-col justify-between">
+      <h4 class="font-bold text-2xl">Appic</h4>
+      <p class="text-sm mt-2 text-gray-300">A portfolio website exploring clean design and responsive layouts</p>
+    </div>
+  </div>
 
-    <!-- Square card -->
-    <div class="relative group overflow-hidden rounded-2xl shadow-xl">
+  <!-- Card 3 -->
+  <div class="flex flex-col bg-gray-900 text-white rounded-2xl overflow-hidden shadow-xl group transition duration-500">
+    <div class="relative h-60 overflow-hidden">
       <img
         src="./assets/fhs.png"
-        alt="Project 5"
-        class="w-full h-72 object-cover transform transition duration-500 group-hover:scale-110"
+        alt="FHS"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
       <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-       <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg">
+        <button class="px-6 py-2 bg-[#c17111] text-white font-bold rounded-full shadow-lg hover:bg-[#e2892e] hover:scale-105 transition-transform duration-300">
           View More
         </button>
       </div>
-      <div class="p-5 bg-gray-900 text-white">
-        <h4 class="font-bold text-2xl">FHS</h4>
-        <p class="text-sm mt-2">Contributed to FHS frontend in Vue.</p>
-      </div>
     </div>
-
+    <div class="flex-grow p-5 flex flex-col justify-between">
+      <h4 class="font-bold text-2xl">FHS</h4>
+      <p class="text-sm mt-2 text-gray-300">Contributed to FHS frontend in Vue.</p>
+    </div>
   </div>
+</div>
+
  
 
 
 
 
 </div>
+
 <section id="certifications" class="banner-2 mt-2 py-20 bg-gray-900 text-white">
          <h3 class="text-4xl md:text-5xl font-bold mb-12  text-[#fff] px-6 md:px-20">My Certifications and Awards</h3>
  <div class="container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-0">
@@ -460,81 +451,106 @@ I have been developing robust web systems with Laravel for over half a decade, b
       </div>
     </div>
 </section>
+<section id="contactus" class="banner-1 text-gray bg-gray-900">
+  <div class="container mx-auto px-6 md:px-20 md:py-20 text-left space-y-10">
 
-<section id="work-process" class="banner-1 text-gray  bg-gray-900">
-  <div class="container mx-auto px-6 md:px-20 md:py-20  text-left space-y-10">
-    <!-- Section Title -->
-    <h3 class="text-4xl md:text-5xl font-bold tracking-wide">My Development Process</h3>
 
-    <!-- Slider Container -->
-    <div class="flex  snap-x snap-mandatory space-x-6 py-10">
-
-      <!-- Slide 1: Research -->
-      <div class="snap-start flex-shrink-0  w-80  rounded-2xl  overflow-hidden hover:scale-105 transform transition duration-500">
-        <img src="./assets/1191.jpg" alt="Research" class=" object-cover">
-        <div class="p-6 ">
-          <h4 class="text-2xl font-bold mb-2">1. Research & Discovery</h4>
-          <p class="text-sm">Understand client needs, audience, and project goals to plan effectively.</p>
-        </div>
+    <!-- Contact Form -->
+    <form
+      action="#"
+      method="POST"
+      class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-800 p-8 rounded-2xl shadow-lg"
+    >
+      <!-- Name -->
+      <div class="col-span-1">
+        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-900 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          required
+        />
       </div>
 
-      <!-- Slide 2: Planning (shifted down for zig-zag) -->
-      <div class="snap-start flex-shrink-0 w-80 rounded-2xl relative top-20  overflow-hidden hover:scale-105 transform transition duration-500">
-        <img src="./assets/15943.jpg" alt="Planning" class="w-full object-cover">
-        <div class="p-6 ">
-          <h4 class="text-2xl font-bold mb-2">2. Planning & Strategy</h4>
-          <p class="text-sm">Define sitemaps, user flows, and timelines for smooth project execution.</p>
-        </div>
+      <!-- Email -->
+      <div class="col-span-1">
+        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-900 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          required
+        />
       </div>
 
-      <!-- Slide 3: Design & Development -->
-      <div class="snap-start flex-shrink-0 rounded-2xl w-80 overflow-hidden hover:scale-105 transform transition duration-500">
-        <img src="./assets/2150104489.jpg" alt="Design & Development" class=" object-cover">
-        <div class="p-6">
-          <h4 class="text-2xl font-bold mb-2">3. Design & Development</h4>
-          <p class="text-sm">Wireframes, mockups, and coding functional responsive websites with Vue or Laravel.</p>
-        </div>
+      <!-- Subject -->
+      <div class="col-span-2">
+        <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Subject of your message"
+          class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-900 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          required
+        />
       </div>
 
-      <!-- Slide 4: Testing & Launch (shifted down for zig-zag) -->
-      <div class="snap-start flex-shrink-0 w-80 relative top-20  rounded-2xl  overflow-hidden hover:scale-105 transform transition duration-500">
-        <img src="./assets/123880.jpg" alt="Testing" class=" object-cover">
-        <div class="p-6 ">
-          <h4 class="text-2xl font-bold mb-2">4. Testing & Launch</h4>
-          <p class="text-sm">QA, bug fixes, and deployment for a smooth and successful launch.</p>
-        </div>
+      <!-- Reason Dropdown -->
+      <div class="col-span-2">
+        <label for="reason" class="block text-sm font-medium text-gray-300 mb-2">Reason</label>
+        <select
+          id="reason"
+          name="reason"
+          class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-900 text-white focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          required
+        >
+          <option value="">Select a reason</option>
+          <option value="collaboration">Collaboration</option>
+          <option value="project">Project Inquiry</option>
+          <option value="hiring">Hiring Opportunity</option>
+          <option value="mentorship">Mentorship</option>
+          <option value="other">Other</option>
+        </select>
       </div>
 
-    </div>
+      <!-- Message -->
+      <div class="col-span-2">
+        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message here..."
+          class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-900 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          required
+        ></textarea>
+      </div>
 
-    <!-- Optional: Add navigation dots or arrows here -->
-
+      <!-- Submit Button -->
+      <div class="col-span-2 flex justify-start">
+        <button
+          type="submit"
+          class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-md transition duration-300"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   </div>
 </section>
 
 
 
 
+
   
 
-  <div class="banner-2 md:flex text-white items-center md:pt-10  md:justify-evenly" id="about">
-    <img
-      class="md:h-[500px] h-[400px] hidden md:block"
-      src="./assets/top-view-man-using-his-laptop.png"
-      alt="user image"
-    />
-    <div class="space-y-5 py-8 px-5 md:py-10 md:px-10 md:w-1/2">
-
-<p class="font-work_sans text-lg leading-relaxed">
-  I’m Anzathu Pindani, a Senior Software Developer from Malawi specializing in Vue.js, Laravel, and WordPress. 
-  I build intuitive, responsive applications and am currently pursuing a Master’s in Informatics. 
-  Outside of coding, I enjoy UI/UX exploration,reading, wrestling, movies, and traveling.
-</p>
-
-
-
-    </div>
-  </div>
+ 
 
   <div class="banner-1 flex h-full items-center">
     <div class="w-7/12 p-12">
