@@ -102,7 +102,7 @@
     <a href="#certifications" v-smooth-scroll>Skills</a>
   </li>
     <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#certifications" v-smooth-scroll>Contact Us</a>
+    <a href="#contactus" v-smooth-scroll>Contact Us</a>
   </li>
 </ul>
 
