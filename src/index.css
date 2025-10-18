@@ -1,52 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+/* ===========================
+   FONTS
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+
+/* ===========================
+   TAILWIND BASE
+=========================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.banner-1 {
-  @apply px-5  pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
-  background-color: #F0F0F0;
+/* ===========================
+   FONT SETUP
+=========================== */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Eczar', serif;
+  }
+  body, p, span, a {
+    font-family: 'Work Sans', sans-serif;
+  }
 }
 
+/* ===========================
+   BANNERS
+=========================== */
+.banner-1,
 .banner-2 {
   @apply px-5 pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
-  @apply bg-gradient-to-r from-[#004c75]/90 to-[#0096c7]/90;
+  
+  /* Circle (radial) gradient */
+  background: #071b35;
+  
+  background-size: 600% 600%;
+  color: #ffffff;
 }
 
+
+.banner-1 {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.banner-2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+
+/* ===========================
+   CUSTOM COLORS
+=========================== */
 .bg-yellowis {
   background-color: #ffddbf;
 }
+
 .hello-button {
   background-color: #0066A1;
 }
+
+/* ===========================
+   MENU BUTTON
+=========================== */
 .menu-button {
-  @apply 3xl:text-2xl 2xl:text-2xl xl:text-xl lg:text-xl md:text-xl  font-bold font-work_sans hover:text-black;
-  color: #594f43;
+  @apply 3xl:text-2xl 2xl:text-2xl xl:text-xl lg:text-xl md:text-xl font-bold font-work_sans hover:text-white;
+  color: #fff; /* light cyan for tech vibe */
 }
 
+/* ===========================
+   SUBMIT BUTTON
+=========================== */
 .submit-button {
-  @apply border-gray-800 border-gray-800 3xl:text-xl 2xl:text-xl lg:text-xl md:text-xl text-xs py-2 px-4  lg:py-4 lg:px-8 rounded-2xl font-work_sans font-semibold;
+  @apply border-none 3xl:text-xl 2xl:text-xl lg:text-xl md:text-xl text-xs py-2 px-4 lg:py-4 lg:px-8 rounded-2xl font-work_sans font-semibold;
+background-color: #FF8C00;
+  color: #ffffff;
+  transition: background 0.3s;
 }
 
+.submit-button:hover {
+  background-color: #0a3579; /* Slightly darker navy on hover */
+}
+
+
+/* ===========================
+   HEADINGS
+=========================== */
 .heading3 {
-  color: #403930;
+  color: #f0f0f0;
   @apply md:text-5xl text-xl font-bold font-work_sans tracking-wide;
 }
 
 .project-title {
-  @apply text-gray-700 text-3xl md:text-4xl font-work_sans tracking-wide font-bold;
+  @apply text-[#00b4d8] text-3xl md:text-4xl font-work_sans tracking-wide font-bold;
 }
 
+/* ===========================
+   CARDS
+=========================== */
 .card {
-  @apply bg-white rounded-2xl md:flex place-items-center my-20 shadow-md;
+  @apply bg-[#161b22] rounded-2xl md:flex place-items-center my-20 shadow-lg;
+  color: #ffffff;
 }
+
 .card-image {
   @apply md:w-1/2 md:rounded-r-2xl md:rounded-l-none rounded-b-2xl flex;
 }
 
+/* ===========================
+   CUSTOM HEIGHT
+=========================== */
 @layer utilities {
   .h-850 {
     height: 900px;
   }
+}
+
+/* ===========================
+   ANIMATED GRADIENT
+=========================== */
+.bg-animated {
+  background: linear-gradient(270deg, #0a1f44);
+  background-size: 600% 600%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
