@@ -350,7 +350,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
       </div>
 
-<div class="relative w-8/12 flex my-20 justify-end items-center">
+<div class="relative w-6/12 flex my-20 justify-end items-center">
   <div class="w-full md:w-12/12 bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
     <!-- Tabs -->
     <div class="flex bg-gray-800 px-4 py-2 space-x-2">
@@ -437,11 +437,9 @@ const learning = {
 
   <!-- About Content -->
   <div class="md:w-6/12 text-center md:text-left">
-    <h3
-      class="text-gray my-5 md:text-5xl text-2xl font-bold font-work_sans tracking-wide px-6 md:px-0"
-    >
-      About Me
-    </h3>
+ <h3 class="text-4xl md:text-5xl font-bold mb-12 text-white px-6 md:px-0">
+   About Me
+  </h3>
     <p
       class="font-work_sans text-lg leading-relaxed px-6 md:px-0 text-gray-300"
     >
@@ -460,8 +458,8 @@ const learning = {
 </div>
 
 <div class="banner-1 space-y-4 pt-32 pb-20" id="work">
-  <h3 class="text-gray pt-6 my-5 md:text-5xl text-xl font-bold font-work_sans tracking-wide px-6 md:px-6">
-    Services
+ <h3 class="text-4xl md:text-5xl font-bold mb-12 text-white px-6 md:px-6">
+  Services
   </h3>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-6">
