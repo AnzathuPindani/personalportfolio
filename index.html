@@ -5,6 +5,12 @@
     <link rel="icon" href="/favicon.ico" />
     <!-- Google reCAPTCHA v2 -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  window.addEventListener('load', () => {
+    const event = new Event('grecaptchaLoaded');
+    window.dispatchEvent(event);
+  });
+</script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zathu's Portfolio</title>
