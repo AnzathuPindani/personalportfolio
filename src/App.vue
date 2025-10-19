@@ -96,7 +96,7 @@
     <a href="#about" v-smooth-scroll>About</a>
   </li>
   <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#work" v-smooth-scroll>Services</a>
+    <a href="#work" v-smooth-scroll>Expertise</a>
   </li>
   <li class="menu-button hover:text-orange-400 transition-colors duration-300">
     <a href="#certifications" v-smooth-scroll>Skills</a>
@@ -266,7 +266,7 @@ I have been developing robust web systems with Laravel for over half a decade, b
   </div>
 <!--End of Modals-->
 
-    <div class="flex items-center">
+    <div class="flex flex-col md:flex-row items-center">
       <div class="w-11/12 space-y-5 md:space-y-10">
       
 <h2
@@ -350,7 +350,8 @@ I have been developing robust web systems with Laravel for over half a decade, b
 
       </div>
 
-<div class="relative w-6/12 flex my-20 justify-end items-center">
+<div class="relative w-full md:w-6/12 flex my-10 md:my-20 justify-end items-center">
+
   <div class="w-full md:w-12/12 bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
     <!-- Tabs -->
     <div class="flex bg-gray-800 px-4 py-2 space-x-2">
@@ -459,7 +460,7 @@ const learning = {
 
 <div class="banner-1 space-y-4 pt-32 pb-20" id="work">
  <h3 class="text-4xl md:text-5xl font-bold mb-12 text-white px-6 md:px-6">
-  Services
+My Expertise
   </h3>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-6">
