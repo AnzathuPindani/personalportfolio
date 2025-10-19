@@ -1,4 +1,8 @@
 <style scoped>
+body {
+  transition: cursor 0.2s ease;
+}
+
 .input {
   width: 100%;
   padding: 0.75rem;
@@ -61,6 +65,7 @@
 }
 </style>
 <template>
+  <div :class="scrollDirection === 'down' ? 'cursor-n-resize' : 'cursor-default'">
   <div class="banner-1">
 <nav
   :class="[
@@ -536,10 +541,10 @@ My Expertise
 
  
 
-
+</div>
 </template>
 <script setup>
-import { ref} from 'vue';
+import { ref,onMounted} from 'vue';
 
 import innoIcon from './assets/nico-logo.png';
 import innoCert from './assets/innovationcert.png';
@@ -572,7 +577,30 @@ const showJsModal = ref(false);
 const codeLines=ref(20);
 const showCvModal = ref(false);
 import emailjs from '@emailjs/browser';
+const cursorX = ref(0);
+const cursorY = ref(0);
+const scrollDirection = ref('default'); // 'up' or 'down'
+let lastScrollY = window.scrollY;
 
+// Your custom images
+const downCursor = '/assets/cursor-down.png';
+const upCursor = '/assets/cursor-up.png';
+
+onMounted(() => {
+  // Track mouse position
+  window.addEventListener('mousemove', (e) => {
+    cursorX.value = e.clientX;
+    cursorY.value = e.clientY;
+  });
+
+  // Track scroll direction
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) scrollDirection.value = 'down';
+    else if (currentScrollY < lastScrollY) scrollDirection.value = 'up';
+    lastScrollY = currentScrollY;
+  });
+});
 
 const name = ref('');
 const email = ref('');
