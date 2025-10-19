@@ -533,12 +533,13 @@ My Expertise
 
   
 
- 
-
+  <Analytics />
 </div>
 </template>
 <script setup>
 import { ref,onMounted} from 'vue';
+import { Analytics } from '@vercel/analytics/react';
+
 
 import innoIcon from './assets/nico-logo.png';
 import innoCert from './assets/innovationcert.png';
@@ -556,6 +557,7 @@ import reactIcon from './assets/science.png';
 import bootIcon from './assets/bootstrap.png';
 import figmaIcon from './assets/figma.png';
 import jsIcon from './assets/js.png';
+
 const showMenu = ref(false);
 const scrolled = ref(false);
 
