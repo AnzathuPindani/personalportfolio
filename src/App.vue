@@ -72,11 +72,12 @@
 
       <!-- Logo / Brand -->
       <div class="flex items-center space-x-2">
-        <h2 class="text-3xl font-bold">
-          <span class="text-orange-500">{</span>
-          <span class="text-white">AP</span>
-          <span class="text-orange-500">}</span>
-        </h2>
+       <h2 class="text-3xl font-bold hidden md:block">
+  <span class="text-orange-500">{</span>
+  <span class="text-white">AP</span>
+  <span class="text-orange-500">}</span>
+</h2>
+
       </div>
 
       <!-- Mobile Menu Button -->
@@ -219,7 +220,7 @@
 
   <!-- Contact Button -->
   <button 
-    href="#about" 
+    href="#contactus" 
     v-smooth-scroll
     class="bg-orange-600 submit-button mb-3 md:mb-0 px-4 py-2 md:px-5 md:py-2 text-sm md:text-base"
   >
