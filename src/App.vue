@@ -506,7 +506,11 @@ My Expertise
         rows="5"
         class="w-full px-5 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-300"
       ></textarea>
-
+        <div 
+    class="g-recaptcha" 
+    :data-sitekey="recaptchaSiteKey"
+    ref="recaptcha"
+  ></div>
       <!-- Button -->
       <button
         :disabled="loading"
@@ -581,7 +585,16 @@ let lastScrollY = window.scrollY;
 // Your custom images
 const downCursor = '/assets/cursor-down.png';
 const upCursor = '/assets/cursor-up.png';
+const recaptchaSiteKey = '6LcWl-8rAAAAAK79Gi81fwH_hEMUzd-gS3cjVKEh'; 
+const captchaVerified = ref(false);
+const captchaToken = ref('');
 
+onMounted(() => {
+  window.onRecaptchaSuccess = (token) => {
+    captchaVerified.value = true;
+    captchaToken.value = token;
+  };
+});
 onMounted(() => {
   // Track mouse position
   window.addEventListener('mousemove', (e) => {
