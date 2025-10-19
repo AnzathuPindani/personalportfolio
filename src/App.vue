@@ -353,7 +353,7 @@ My Expertise
       alt="Mobile Apps"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4  transition duration-500">
       <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">Mobile Application Development</h4>
     </div>
   </div>
@@ -366,9 +366,12 @@ My Expertise
       alt="Appic"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
-      <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">Website Development</h4>
-    </div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+  <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">
+    Website Development
+  </h4>
+</div>
+
   </div>
 
   <!-- Card 3 -->
@@ -379,7 +382,7 @@ My Expertise
       alt="FHS"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4  transition duration-500">
       <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">Software Development</h4>
     </div>
   </div>
@@ -391,7 +394,7 @@ My Expertise
       alt="Mobile Apps"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4  transition duration-500">
       <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">API Intergration</h4>
     </div>
   </div>
@@ -404,7 +407,7 @@ My Expertise
       alt="Appic"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4  transition duration-500">
       <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">Wordpress Plugin & Theme Development</h4>
     </div>
   </div>
@@ -417,7 +420,7 @@ My Expertise
       alt="FHS"
       class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110 shadow-2xl"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition duration-500">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4  transition duration-500">
       <h4 class="text-white text-xl md:text-2xl font-bold text-center animate-fade-slide-up">Data-driven Frontend Solutions</h4>
     </div>
   </div>
