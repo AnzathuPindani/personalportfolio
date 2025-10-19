@@ -62,186 +62,67 @@
 </style>
 <template>
   <div class="banner-1">
-    <!-- NavBar -->
-  <nav class="container px-6 mx-auto flex justify-between items-center py-4  ">
-  <!-- Logo / Brand -->
-  <div class="flex items-center space-x-2">
-    <h2 class="text-3xl font-bold">
-      <span class="text-orange-500">{</span>
-      <span class="text-white">AP</span>
-      <span class="text-orange-500">}</span>
-    </h2>
-    
-  </div>
-
-  <!-- Mobile Menu Button -->
-  <div @click="showMenu = !showMenu" class="md:hidden text-white cursor-pointer">
-    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-      <path
-        fill-rule="evenodd"
-        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-      />
-    </svg>
-  </div>
-
-  <!-- Menu Links -->
-<ul
-  :class="showMenu ? 'flex flex-col mt-4 space-y-4 md:flex-row md:space-y-0 md:space-x-8 md:mt-0' : 'hidden md:flex md:flex-row md:space-x-8'"
-  class="items-center text-white font-semibold text-sm md:text-xs"
+<nav
+  :class="[
+    'fixed top-0 left-0 w-full z-50 transition-colors duration-300 border-b',
+    scrolled ? 'bg-gray-900/80 backdrop-blur-lg border-gray-800' : 'bg-transparent border-transparent'
+  ]"
 >
-  <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#">Home</a>
-  </li>
-  <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#about" v-smooth-scroll>About</a>
-  </li>
-  <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#work" v-smooth-scroll>Expertise</a>
-  </li>
-  <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#certifications" v-smooth-scroll>Skills</a>
-  </li>
-    <li class="menu-button hover:text-orange-400 transition-colors duration-300">
-    <a href="#contactus" v-smooth-scroll>Contact Us</a>
-  </li>
-</ul>
+<div class="container mx-auto px-10 md:px-28 flex justify-between items-center py-4">
 
-</nav>
+      <!-- Logo / Brand -->
+      <div class="flex items-center space-x-2">
+        <h2 class="text-3xl font-bold">
+          <span class="text-orange-500">{</span>
+          <span class="text-white">AP</span>
+          <span class="text-orange-500">}</span>
+        </h2>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div @click="showMenu = !showMenu" class="md:hidden text-white cursor-pointer">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+          <path
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+          />
+        </svg>
+      </div>
+
+      <!-- Menu Links -->
+      <ul
+        :class="[
+          'text-white font-semibold text-lg  md:text-lg transition-all duration-300',
+          'md:flex md:flex-row md:space-x-8',
+          showMenu
+            ? 'flex flex-col mt-4 space-y-4 bg-gray-900 p-4 rounded-lg absolute top-16 left-0 w-full md:static md:bg-transparent md:p-0 md:rounded-none'
+            : 'hidden md:flex'
+        ]"
+        class="items-center"
+      >
+        <li class="hover:text-orange-400 transition-colors duration-300">
+          <a href="#">Home</a>
+        </li>
+        <li class="hover:text-orange-400 transition-colors duration-300">
+          <a href="#about" v-smooth-scroll>About</a>
+        </li>
+        <li class="hover:text-orange-400 transition-colors duration-300">
+          <a href="#work" v-smooth-scroll>Expertise</a>
+        </li>
+        <li class="hover:text-orange-400 transition-colors duration-300">
+          <a href="#certifications" v-smooth-scroll>Skills</a>
+        </li>
+        <li class="hover:text-orange-400 transition-colors duration-300">
+          <a href="#contactus" v-smooth-scroll>Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
 
 
 <!--Start of Modals-->
-<div 
-  v-if="showModal" 
-  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
->
-  <div class="bg-[#41B883] rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
-    <!-- Close Button -->
-    <button 
-      @click="showModal = false" 
-      class="absolute top-3 right-3 text-white hover:text-gray-200"
-    >
-      ✕
-    </button>
-
-    <!-- Modal Content -->
-    <h2 class="text-2xl font-bold mb-4">My Vue Experience</h2>
-    <p class="leading-relaxed">
-      I craft scalable and modern frontend applications powered by Vue.js — from seamless API integrations to efficient state management with Pinia, and reusable component-driven designs.
-
-      Currently, I’m also pursuing a Vue.js Mid-Level Certification, sharpening my expertise to deliver even more powerful, maintainable, and user-friendly solutions.
-    </p>
-  </div>
-</div>
-
-<div 
-      v-if="showLaravelModal" 
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    >
-      <div class="bg-red-600 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
-        <!-- Close Button -->
-        <button 
-          @click="showLaravelModal = false" 
-          class="absolute top-3 right-3 text-white hover:text-gray-200"
-        >
-          ✕
-        </button>
-
-        <!-- Modal Content -->
-        <h2 class="text-2xl font-bold mb-4">My Laravel Experience</h2>
-        <p class="leading-relaxed">
-I have been developing robust web systems with Laravel for over half a decade, building scalable, secure, and maintainable applications.  
-          From database design to RESTful APIs and server-side logic, I focus on delivering reliable solutions.  
-          I also integrate Laravel with modern frontend frameworks to create full-stack, high-performance applications that meet real-world needs. 
-        </p>
-      </div>
-    </div>
-
-  <div 
-      v-if="showPythonModal" 
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    >
-      <div class="bg-yellow-500 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
-        <!-- Close Button -->
-        <button 
-          @click="showPythonModal = false" 
-          class="absolute top-3 right-3 text-white hover:text-gray-200"
-        >
-          ✕
-        </button>
-
-        <!-- Modal Content -->
-        <h2 class="text-2xl font-bold mb-4">My Python Experience & Certifications</h2>
-        <p class="leading-relaxed mb-4">
-          I have experience developing software solutions with Python, building backend services, scripts, and data-driven applications.  
-  Python allows me to tackle complex problems, automate workflows, and integrate systems seamlessly.  
-  To further my knowledge and validate my skills, I have obtained the Python Certified Associate in Programming and Python Certified Entry-Level Programmer certifications.
-        </p>
-
-        <!-- Badges -->
-        <div class="flex space-x-4 mt-4">
-          <img src="./assets/pcep.png" alt="Python Certification 1" class="w-16 h-16" />
-          <img src="./assets/pcap.png" alt="Python Certification 2" class="w-16 h-16" />
-        </div>
-      </div>
-    </div>
-
-        <div 
-      v-if="showWordPressModal" 
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    >
-      <div class="bg-blue-700 rounded-2xl shadow-xl p-6 max-w-lg w-full relative text-white">
-        <!-- Close Button -->
-        <button 
-          @click="showWordPressModal = false" 
-          class="absolute top-3 right-3 text-white hover:text-gray-200"
-        >
-          ✕
-        </button>
-
-        <!-- Modal Content -->
-        <h2 class="text-2xl font-bold mb-4">My WordPress Experience</h2>
-        <p class="leading-relaxed mb-4">
-          I have experience developing dynamic and responsive websites with WordPress, creating custom plugins, and optimizing sites for performance and security.  
-          I specialize in building user-friendly, scalable solutions that meet client needs and integrate modern web technologies.  
-          To strengthen my expertise, I continually explore advanced WordPress development techniques and best practices.
-        </p>
-
-      
-        
-      </div>
-    </div>
-        <!-- JavaScript Modal -->
-    <div 
-      v-if="showJsModal" 
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-    >
-      <div class="bg-yellow-500 rounded-2xl shadow-xl p-6 max-w-2xl w-full relative text-white">
-        <!-- Close Button -->
-        <button 
-          @click="showJsModal = false" 
-          class="absolute top-3 right-3 text-white hover:text-gray-200"
-        >
-          ✕
-        </button>
-
-        <!-- Modal Content -->
-        <h2 class="text-2xl font-bold mb-4">My JavaScript Journey</h2>
-        <p class="leading-relaxed mb-4">
-          My love for JavaScript has driven me to develop dynamic, interactive web applications.  
-          This passion has also inspired me to advance further into Vue.js, mastering modern frontend techniques and component-driven development.  
-          I focus on writing clean, efficient code to build scalable and maintainable applications.
-        </p>
-
-        <!-- Certification Badge -->
-        <div class="flex justify-center mt-6">
-          <img 
-            src="./assets/javascriptcertification.jpg" 
-            alt="JavaScript Certification" 
-            class="max-w-full h-auto rounded-lg shadow-lg"
-          />
-        </div>
-      </div>
-    </div>
 
     <div
     v-if="showCvModal"
@@ -675,7 +556,13 @@ import reactIcon from './assets/science.png';
 import bootIcon from './assets/bootstrap.png';
 import figmaIcon from './assets/figma.png';
 import jsIcon from './assets/js.png';
-const showMenu=ref('false');
+const showMenu = ref(false);
+const scrolled = ref(false);
+
+window.addEventListener('scroll', () => {
+  scrolled.value = window.scrollY > 50; 
+});
+
 const showModal = ref(false);
 const showLaravelModal = ref(false);
 const showPythonModal = ref(false);
