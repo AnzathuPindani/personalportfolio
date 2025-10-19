@@ -506,11 +506,13 @@ My Expertise
         rows="5"
         class="w-full px-5 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition duration-300"
       ></textarea>
-        <div 
-    class="g-recaptcha" 
-    :data-sitekey="recaptchaSiteKey"
-    ref="recaptcha"
-  ></div>
+  <div 
+  class="g-recaptcha" 
+  :data-sitekey="recaptchaSiteKey"
+  data-callback="onRecaptchaSuccess"
+  ref="recaptcha"
+></div>
+
       <!-- Button -->
       <button
         :disabled="loading"
@@ -630,12 +632,20 @@ const sendEmail = async () => {
   successMsg.value = '';
   errorMsg.value = '';
 
+  // Check if captcha is verified
+  if (!captchaVerified.value) {
+    errorMsg.value = 'Please complete the CAPTCHA.';
+    loading.value = false;
+    return;
+  }
+
   const templateParams = {
     from_name: name.value,
     from_email: email.value,
     subject: subject.value,
     message: message.value,
     reason: reason.value,
+    'g-recaptcha-response': captchaToken.value, // Optional: pass token to backend if needed
   };
 
   try {
@@ -647,6 +657,8 @@ const sendEmail = async () => {
     subject.value = '';
     message.value = '';
     reason.value = '';
+    captchaVerified.value = false;
+    grecaptcha.reset(); // reset captcha for next submission
   } catch (error) {
     console.error(error);
     errorMsg.value = 'Failed to send email. Please try again.';
@@ -654,6 +666,7 @@ const sendEmail = async () => {
     loading.value = false;
   }
 };
+
 
 const isLoadingCv = ref(false);
 
