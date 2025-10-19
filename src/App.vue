@@ -533,12 +533,12 @@ My Expertise
 
   
 
-  <Analytics />
+
 </div>
 </template>
 <script setup>
 import { ref,onMounted} from 'vue';
-import { Analytics } from '@vercel/analytics/react';
+
 
 
 import innoIcon from './assets/nico-logo.png';
