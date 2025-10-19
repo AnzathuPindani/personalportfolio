@@ -172,32 +172,26 @@ body {
 
 <div class="flex gap-4 mt-6">
   <!-- Dribbble -->
-  <a href="https://dribbble.com/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors">
+  <a href="https://dribbble.com/Anzathu" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors">
     <img src="./assets/dribble.png" alt="Dribbble" class="w-6 h-6"/>
   </a>
 
   <!-- GitHub -->
-  <a href="https://github.com/" target="_blank" class="text-gray-400 hover:text-gray-800 transition-colors">
+  <a href="https://github.com/AnzathuPindani" target="_blank" class="text-gray-400 hover:text-gray-800 transition-colors">
     <img src="./assets/github.png" alt="GitHub" class="w-6 h-6"/>
   </a>
 
   <!-- LinkedIn -->
-  <a href="https://linkedin.com/" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors">
+  <a href="https://www.linkedin.com/in/anzathupindani/" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors">
     <img src="./assets/linkedin.png" alt="LinkedIn" class="w-6 h-6"/>
   </a>
 
   <!-- Facebook -->
-  <a href="https://facebook.com/" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors">
+  <a href="https://facebook.com/zathu.pindani/" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors">
     <img src="./assets/facebook.png" alt="Facebook" class="w-6 h-6"/>
   </a>
 
-  <!-- Instagram -->
-  <a href="https://instagram.com/" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
-    <img src="./assets/instagram.png" alt="Instagram" class="w-6 h-6"/>
-  </a>
-   <a href="https://instagram.com/" target="_blank" class="text-gray-400 hover:text-pink-400 transition-colors">
-    <img src="./assets/mail.png" alt="Instagram" class="w-6 h-6"/>
-  </a>
+
 </div>
 
     <div class="md:flex gap-3 md:gap-5">
